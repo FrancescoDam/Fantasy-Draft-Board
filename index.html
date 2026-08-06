@@ -14,7 +14,7 @@
 <link rel="icon" href="icon-192.png" sizes="192x192">
 <link rel="icon" href="icon-512.png" sizes="512x512">
 <style>
-  .viz-root {
+  html, .viz-root {
     color-scheme: light;
     --surface-1:      #fcfcfb;
     --page:           #f9f9f7;
@@ -37,6 +37,7 @@
     --seq-100: #cde2fb; --seq-250:#86b6ef; --seq-400:#3987e5; --seq-550:#1c5cab; --seq-700:#0d366b;
   }
   @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])),
     :root:where(:not([data-theme="light"])) .viz-root {
       color-scheme: dark;
       --surface-1: #1a1a19; --page:#0d0d0d; --text-primary:#ffffff; --text-secondary:#c3c2b7;
@@ -45,6 +46,7 @@
       --series-k:#9678d6; --series-dst:#d3654a;
     }
   }
+  :root[data-theme="dark"],
   :root[data-theme="dark"] .viz-root {
     color-scheme: dark;
     --surface-1: #1a1a19; --page:#0d0d0d; --text-primary:#ffffff; --text-secondary:#c3c2b7;
