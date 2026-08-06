@@ -1845,33 +1845,7 @@ if('serviceWorker' in navigator){
   });
 }
 </script>
-<script>
-  async function loadSleeperPlayerData() {
-    try {
-      const response = await fetch("/api/sleeper/players");
-      const data = await response.json();
-
-      console.log("Sleeper players loaded:", data.count);
-
-      const notice = document.createElement("div");
-      notice.style.position = "fixed";
-      notice.style.bottom = "20px";
-      notice.style.right = "20px";
-      notice.style.background = "#111827";
-      notice.style.color = "white";
-      notice.style.padding = "12px 16px";
-      notice.style.borderRadius = "10px";
-      notice.style.zIndex = "9999";
-      notice.style.fontFamily = "Arial, sans-serif";
-      notice.textContent = `Sleeper data loaded: ${data.count} players`;
-
-      document.body.appendChild(notice);
-    } catch (error) {
-      console.error("Failed to load Sleeper data:", error);
-    }
-  }
-
-  loadSleeperPlayerData();
-</script>
+  <script src="/draft-dashboard/sleeper-automation.js"></script>
 </body>
 </html>
+
